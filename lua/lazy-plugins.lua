@@ -531,8 +531,10 @@ require('lazy').setup({
             luasnip.lsp_expand(args.body)
           end,
         },
+
         completion = { completeopt = 'menu,menuone,noinsert' },
 
+        performance = { max_view_entries = 7, },
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
         --

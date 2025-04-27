@@ -10,6 +10,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- window
 
+vim.keymap.set('n', '<leader>bq', '<cmd>qa<cr>', { desc = 'Quit all windows' })
+
 -- See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -29,7 +31,7 @@ vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increa
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 local new_term_job_id = 0
-vim.keymap.set('n', '<space>st', function()
+vim.keymap.set('n', '<space>bt', function()
   vim.cmd.vnew()
   vim.cmd.term()
   vim.cmd.wincmd 'J'
@@ -38,6 +40,6 @@ vim.keymap.set('n', '<space>st', function()
   new_term_job_id = vim.bo.channel
 end, { desc = 'Open small terminal below' })
 
-vim.keymap.set('n', '<space>so', function()
+vim.keymap.set('n', '<space>bo', function()
   vim.fn.chansend(new_term_job_id, { 'odin run .\r\n' })
-end)
+end, { desc = 'Run . odin project in terminal' })

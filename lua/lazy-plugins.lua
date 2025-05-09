@@ -1,7 +1,8 @@
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  --'xiyaowong/transparent.nvim',
+  --  'xiyaowong/transparent.nvim',
+
   {
     'christoomey/vim-tmux-navigator',
     cmd = {
@@ -621,25 +622,18 @@ require('lazy').setup({
     end,
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'rebelot/kanagawa.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('kanagawa').setup {}
-
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'kanagawa-wave'
-    end,
-  },
+  { 'rebelot/kanagawa.nvim' },
 
   { 'folke/tokyonight.nvim' },
+
+  {
+    'shaunsingh/nord.nvim',
+    priority = 1000,
+    config = function()
+      vim.g.nord_italic = false
+      vim.g.nord_bold = false
+    end,
+  },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },

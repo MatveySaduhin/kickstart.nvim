@@ -2,6 +2,74 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   --  'xiyaowong/transparent.nvim',
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        theme = 'doom',
+        config = {
+          header = {
+            [[                                   ]],
+            [[    ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆         ]],
+            [[     ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ]],
+            [[           ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷⠄⠄⠄⠄⠻⠿⢿⣿⣧⣄     ]],
+            [[            ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ]],
+            [[           ⢠⣿⣿⣿⠈  ⠡⠌⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ]],
+            [[    ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘⠄ ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ]],
+            [[   ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ]],
+            [[  ⢠⣿⣿⠄⠄⠄⠈⢀⣸⣿⣿⣿⣿  ⢸⣿⣿⡇⣶⣿⣿⣿⣷⣶⣿⣿⣿⣿⠃    ]],
+            [[  ⣾⣿⣿⡀⣾⣿⣿⠉⠉⠉⠉⠉⠁ ⢸⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿      ]],
+            [[  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃       ]],
+            [[                                   ]],
+          },
+          center = {
+            {
+              icon = ' ',
+              icon_hl = 'Title',
+              desc = 'New File           ',
+              desc_hl = 'String',
+              key = 'n',
+              key_hl = 'Number',
+              key_format = ' %s',
+              action = 'enew',
+            },
+            {
+              icon = ' ',
+              icon_hl = 'Title',
+              desc = 'Telescope for Files          ',
+              desc_hl = 'String',
+              key = 's',
+              key_hl = 'Number',
+              key_format = ' %s',
+              action = 'Telescope find_files',
+            },
+            {
+              icon = ' ',
+              icon_hl = 'Title',
+              desc = 'Config             ',
+              desc_hl = 'String',
+              key = 'c',
+              key_hl = 'Number',
+              key_format = ' %s',
+              action = 'e ~/.config/nvim/init.lua',
+            },
+            {
+              icon = ' ',
+              icon_hl = 'Title',
+              desc = 'Quit',
+              desc_hl = 'String',
+              key = 'q',
+              key_hl = 'Number',
+              key_format = ' %s', -- remove default surrounding `[]`
+              action = 'quitall',
+            },
+          },
+        },
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+  },
 
   {
     'christoomey/vim-tmux-navigator',

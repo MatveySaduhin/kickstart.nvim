@@ -41,5 +41,5 @@ vim.keymap.set('n', '<space>bt', function()
 end, { desc = 'Open small terminal below' })
 
 vim.keymap.set('n', '<space>bo', function()
-  vim.fn.chansend(new_term_job_id, { 'odin run .\r\n' })
-end, { desc = 'Run . odin project in terminal' })
+  vim.fn.chansend(new_term_job_id, { 'go run main.go\r\n' })
+end, { desc = 'Run . go project in terminal' })

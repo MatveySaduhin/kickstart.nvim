@@ -14,7 +14,11 @@ require 'lazy-bootstrap'
 
 require 'lazy-plugins'
 
-require 'colorscheme'
+-- if colorscheme is not configured the program won't crush
+local ok, _ = pcall(require, 'colorscheme')
+if not ok then
+  vim.notify('colorscheme.lua not found — skipping', vim.log.levels.WARN)
+end
 
 --[[
 

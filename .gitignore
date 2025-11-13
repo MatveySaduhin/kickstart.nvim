@@ -3,6 +3,6 @@ test.sh
 .luarc.json
 nvim
 lazy-lock.json
-colorscheme.lua
+lua/colorscheme.lua
 
 spell/
